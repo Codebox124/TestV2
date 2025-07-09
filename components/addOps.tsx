@@ -40,7 +40,7 @@ export const AddOpsModal: React.FC<AddOpsModalProps> = ({ opened, onClose, onSub
             onClose={onClose}
             title="Add Ops"
             centered
-            size="sm"
+            size="md"
             styles={{
                 content: {
                     backgroundColor: '#0f172a',

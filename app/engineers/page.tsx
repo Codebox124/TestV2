@@ -32,6 +32,7 @@ import {
 import { Layout } from '@/components/Layout';
 import { AddEngineerModal } from '@/components/addEngineers';
 import { useDisclosure } from '@mantine/hooks';
+import { useRouter } from 'next/navigation';
 
 // Sample data matching your image
 const engineersData = [
@@ -67,6 +68,7 @@ const engineersData = [
 export default function EngineerPage() {
   const [opened, { open, close }] = useDisclosure(false);
   const [engineers, setEngineers] = useState(engineersData);
+  const router = useRouter()
   const handleModalSubmit = (data: { name: string; email: string; phone: string }) => {
     const newEngineer = {
       id: engineers.length + 1,
@@ -79,8 +81,11 @@ export default function EngineerPage() {
   };
   const handleAddEngineer = () => {
     open();
-  };;
+  };
 
+  const handleViewDetails = (engineerId: any) => {
+    router.push(`/engineers/${engineerId}`);
+  };
   const rows = engineersData.map((engineer) => (
     <Table.Tr key={engineer.id}>
       <Table.Td>
@@ -134,6 +139,7 @@ export default function EngineerPage() {
           <Menu.Dropdown>
             <Menu.Item
               leftSection={<IconEye style={{ width: rem(14), height: rem(14) }} />}
+               onClick={() => handleViewDetails(engineer.id)}
 
             >
               View Details

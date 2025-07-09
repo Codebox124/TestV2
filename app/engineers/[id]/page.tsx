@@ -73,62 +73,62 @@ export default function EngineerDetailsPage() {
     };
 
     const TaskCard = ({ task, showProgress = false }: any) => (
-           <Paper
-               style={{
-                   backgroundColor: '#ffff',
-                   border: '1px solid #1e293b',
-                   borderRadius: '0.5rem',
-                   padding: '1rem',
-                   marginBottom: '0.5rem'
-               }}
-           >
-               <Flex justify="space-between" align="center">
-                   <Box style={{ flex: 1 }}>
-                       <Text size="md" fw={600} c="#0E3465" mb="md">
-                           {task.serviceName}
-                       </Text>
-                       <Group gap="xs" align="center" mb={showProgress ? "sm" : "0"}>
-                           <Avatar
-                               size={20}
-                               radius="xl"
-                               style={{
-                                   backgroundColor: '#64748b',
-                                   color: 'white',
-                                   fontSize: '10px',
-                                   display: 'flex',
-                                   alignItems: 'center',
-                                   justifyContent: 'center'
-                               }}
-                           >
-                               C
-                           </Avatar>
-                           <Text size="xs" c="#64748b">{task.companyName}</Text>
-                       </Group>
-                       {showProgress && (
-                           <Box mt="sm">
-                               <Box style={{
-                                   width: '100%',
-                                   height: '6px',
-                                   backgroundColor: '#1e293b',
-                                   borderRadius: '3px',
-                                   overflow: 'hidden'
-                               }}>
-                                   <Box style={{
-                                       width: `${task.progress}%`,
-                                       height: '100%',
-                                       backgroundColor: '#0ea5e9',
-                                       borderRadius: '3px'
-                                   }} />
-                               </Box>
-                           </Box>
-                       )}
-                   </Box>
-                   <Text size="xs" c="#64748b" style={{ textAlign: 'right', marginLeft: '1rem' }}>
-                       {task.date}
-                   </Text>
-               </Flex>
-           </Paper>
-       );
+        <Paper
+            style={{
+                backgroundColor: '#ffff',
+                border: '1px solid #1e293b',
+                borderRadius: '0.5rem',
+                padding: '1rem',
+                marginBottom: '0.5rem'
+            }}
+        >
+            <Flex justify="space-between" align="center">
+                <Box style={{ flex: 1 }}>
+                    <Text size="md" fw={600} c="#0E3465" mb="md">
+                        {task.serviceName}
+                    </Text>
+                    <Group gap="xs" align="center" mb={showProgress ? "sm" : "0"}>
+                        <Avatar
+                            size={20}
+                            radius="xl"
+                            style={{
+                                backgroundColor: '#64748b',
+                                color: 'white',
+                                fontSize: '10px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}
+                        >
+                            C
+                        </Avatar>
+                        <Text size="xs" c="#64748b">{task.companyName}</Text>
+                    </Group>
+                    {showProgress && (
+                        <Box mt="sm">
+                            <Box style={{
+                                width: '100%',
+                                height: '6px',
+                                backgroundColor: '#1e293b',
+                                borderRadius: '3px',
+                                overflow: 'hidden'
+                            }}>
+                                <Box style={{
+                                    width: `${task.progress}%`,
+                                    height: '100%',
+                                    backgroundColor: '#0ea5e9',
+                                    borderRadius: '3px'
+                                }} />
+                            </Box>
+                        </Box>
+                    )}
+                </Box>
+                <Text size="xs" c="#64748b" style={{ textAlign: 'right', marginLeft: '1rem' }}>
+                    {task.date}
+                </Text>
+            </Flex>
+        </Paper>
+    );
 
     function handleModalSubmit(data: { name: string; email: string; phone: string; }): void {
         throw new Error('Function not implemented.');
