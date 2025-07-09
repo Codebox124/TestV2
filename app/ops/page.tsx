@@ -30,8 +30,9 @@ import {
   IconMail
 } from '@tabler/icons-react';
 import { Layout } from '@/components/Layout';
-import { AddEngineerModal } from '@/components/addEngineers';
+
 import { useDisclosure } from '@mantine/hooks';
+import { AddOpsModal } from '@/components/addOps';
 
 // Sample data matching your image
 const engineersData = [
@@ -160,7 +161,7 @@ export default function OpsPage() {
 
   return (
     <Layout>
-      <AddEngineerModal opened={opened} onClose={close} onSubmit={handleModalSubmit} />
+      <AddOpsModal opened={opened} onClose={close} onSubmit={handleModalSubmit} />
       <Box
         style={{
 
