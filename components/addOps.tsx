@@ -9,13 +9,13 @@ import {
     Flex
 } from '@mantine/core';
 
-interface AddEngineerModalProps {
+interface AddOpsModalProps {
     opened: boolean;
     onClose: () => void;
     onSubmit: (data: { name: string; email: string; phone: string }) => void;
 }
 
-export const AddOpsModal: React.FC<AddEngineerModalProps> = ({ opened, onClose, onSubmit }) => {
+export const AddOpsModal: React.FC<AddOpsModalProps> = ({ opened, onClose, onSubmit }) => {
     const [firstName, setFirstName] = React.useState('');
     const [lastName, setLastName] = React.useState('');
     const [email, setEmail] = React.useState('');
