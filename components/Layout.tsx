@@ -112,7 +112,7 @@ export function Layout({ children }: LayoutProps) {
         breakpoint: 'sm',
         collapsed: { mobile: !opened },
       }}
-      padding="md"
+      
     >
       <AppShell.Navbar
         p="md"

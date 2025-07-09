@@ -163,9 +163,9 @@ export default function EngineerPage() {
       <AddEngineerModal opened={opened} onClose={close} onSubmit={handleModalSubmit} />
       <Box
         style={{
-
+          backgroundColor: '#0f172a',
           minHeight: '100vh',
-          padding: '0px'
+          padding: '2rem'
         }}
       >
         <Container fluid>

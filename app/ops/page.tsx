@@ -33,6 +33,7 @@ import { Layout } from '@/components/Layout';
 
 import { useDisclosure } from '@mantine/hooks';
 import { AddOpsModal } from '@/components/addOps';
+import { useRouter } from 'next/navigation'; // Changed from default import
 
 // Sample data matching your image
 const engineersData = [
@@ -66,8 +67,10 @@ const engineersData = [
 ];
 
 export default function OpsPage() {
+  const router = useRouter(); // Use the hook to get router instance
   const [opened, { open, close }] = useDisclosure(false);
   const [engineers, setEngineers] = useState(engineersData);
+  
   const handleModalSubmit = (data: { name: string; email: string; phone: string }) => {
     const newEngineer = {
       id: engineers.length + 1,
@@ -78,10 +81,15 @@ export default function OpsPage() {
     };
     setEngineers((prev) => [...prev, newEngineer]);
   };
+  
   const handleAddEngineer = () => {
     open();
-  };;
-
+  };
+  
+  const handleViewDetails = (engineerId: any) => {
+    router.push(`/ops/${engineerId}`);
+  };
+  
   const rows = engineersData.map((ops) => (
     <Table.Tr key={ops.id}>
       <Table.Td>
@@ -135,13 +143,12 @@ export default function OpsPage() {
           <Menu.Dropdown>
             <Menu.Item
               leftSection={<IconEye style={{ width: rem(14), height: rem(14) }} />}
-
+              onClick={() => handleViewDetails(ops.id)}
             >
               View Details
             </Menu.Item>
             <Menu.Item
               leftSection={<IconEdit style={{ width: rem(14), height: rem(14) }} />}
-
             >
               Edit
             </Menu.Item>
@@ -149,7 +156,6 @@ export default function OpsPage() {
             <Menu.Item
               color="red"
               leftSection={<IconTrash style={{ width: rem(14), height: rem(14) }} />}
-
             >
               Delete
             </Menu.Item>
@@ -164,9 +170,9 @@ export default function OpsPage() {
       <AddOpsModal opened={opened} onClose={close} onSubmit={handleModalSubmit} />
       <Box
         style={{
-
           minHeight: '100vh',
-          padding: '0px'
+          padding: '2rem',
+          backgroundColor: '#0f172a'
         }}
       >
         <Container fluid>
@@ -191,7 +197,6 @@ export default function OpsPage() {
             {/* Filters */}
             <Flex gap="md" align="center">
               <Select
-
                 data={['This month', 'Last month', 'This quarter', 'This year']}
                 style={{ width: 150 }}
                 styles={{
@@ -281,7 +286,6 @@ export default function OpsPage() {
                 <Table.Tbody>{rows}</Table.Tbody>
               </Table>
             </Paper>
-
           </Stack>
         </Container>
       </Box>
