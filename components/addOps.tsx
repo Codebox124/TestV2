@@ -48,7 +48,7 @@ export const AddOpsModal: React.FC<AddOpsModalProps> = ({ opened, onClose, onSub
                     borderRadius: '8px',
                 },
                 title: { color: 'white', fontWeight: 600 },
-                header: { borderBottom: 'none' },
+                header: { borderBottom: 'none',backgroundColor: '#0f172a', },
                 body: { color: 'white' },
                 close: {
                     color: 'white',
