@@ -22,6 +22,8 @@ import {
     IconArrowLeft
 } from '@tabler/icons-react';
 import { Layout } from '@/components/Layout';
+import { AddOpsTaskModal } from '@/components/OpsTaskModal';
+import { useDisclosure } from '@mantine/hooks';
 
 const engineer = {
     id: 1,
@@ -34,17 +36,19 @@ const engineer = {
 };
 
 // Simulate task generation
-const generateTasks = (completedTasks: number) => {
-    const ongoing = Array.from({ length: 1 }, (_, i) => ({
-        id: `ongoing-${i}`,
-        serviceName: `Service Name`,
-        companyName: `Company Name`,
-        date: '23 Oct 2022',
-        progress: 75
-    }));
+const generateTasks = () => {
+    const ongoing = [
+        {
+            id: `ongoing-1`,
+            serviceName: `Service Name`,
+            companyName: `Company Name`,
+            date: '23 Oct 2022',
+            progress: 75
+        }
+    ];
 
-    const previous = Array.from({ length: completedTasks }, (_, i) => ({
-        id: `prev-${i}`,
+    const previous = Array.from({ length: 4 }, (_, i) => ({
+        id: `prev-${i + 1}`,
         serviceName: `Service Name`,
         companyName: `Company Name`,
         date: '23 Oct 2022'
@@ -55,8 +59,9 @@ const generateTasks = (completedTasks: number) => {
 
 export default function EngineerDetailsPage() {
     const [selectedPeriod, setSelectedPeriod] = useState('Last month');
+    const [opened, { open, close }] = useDisclosure(false);
+    const { ongoing, previous } = generateTasks();
 
-    const { ongoing, previous } = generateTasks(engineer.tasks);
 
     const engineerDetails = {
         ...engineer,
@@ -125,18 +130,26 @@ export default function EngineerDetailsPage() {
         </Paper>
     );
 
+    function handleModalSubmit(data: { name: string; email: string; phone: string; }): void {
+        throw new Error('Function not implemented.');
+    }
+    const handleAddTask = () => {
+        open();
+    };
+
     return (
         <Layout>
+            <AddOpsTaskModal opened={opened} onClose={close} onSubmit={handleModalSubmit} />
             <Box style={{ backgroundColor: '#0f172a', minHeight: '100vh', padding: '', paddingTop: '0px' }}>
                 <Container fluid>
-                  
+
 
                     <Flex gap="2rem" align="flex-start">
-                        {/* Left Panel */}
-                        <Box style={{  flexShrink: 0,flex: 1 }}>
+
+                        <Box style={{ flexShrink: 0, flex: 1 }}>
                             <Paper style={{
                                 backgroundColor: '#0f172a',
-                             
+
                                 borderRadius: '0.5rem',
                                 padding: '2rem'
                             }}>
@@ -146,6 +159,7 @@ export default function EngineerDetailsPage() {
                                         <Button
                                             size="sm"
                                             leftSection={<IconPlus size={14} />}
+                                            onClick={handleAddTask}
                                             style={{
                                                 backgroundColor: '#0ea5e9',
                                                 border: 'none',
@@ -201,9 +215,9 @@ export default function EngineerDetailsPage() {
                             </Paper>
                         </Box>
 
-                        {/* Right Panel */}
-                        <Box style={{ flex: 1, width: '460px', backgroundColor: '#030E1BE5',padding: '2rem' }}>
-                            {/* Ongoing */}
+
+                        <Box style={{ flex: 1, width: '460px', backgroundColor: '#030E1BE5', padding: '2rem', height: '100vh' }}>
+
                             <Box mb="xl">
                                 <Title order={3} c="#0ea5e9" fw={600} mb="md">
                                     {ongoing.length} Ongoing tasks
@@ -230,7 +244,7 @@ export default function EngineerDetailsPage() {
                                     </Title>
                                     <Select
                                         value={selectedPeriod}
-                                      
+
                                         data={['Last month', 'This month', 'Last quarter', 'This year']}
                                         rightSection={<IconChevronDown size={14} />}
                                         size="sm"
