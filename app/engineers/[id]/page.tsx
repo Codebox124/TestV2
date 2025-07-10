@@ -12,7 +12,8 @@ import {
     Flex,
     Box,
     ActionIcon,
-    Select
+    Select,
+    Image,
 } from '@mantine/core';
 import {
     IconPlus,
@@ -158,7 +159,13 @@ export default function EngineerDetailsPage() {
                                     <Group gap="xs">
                                         <Button
                                             size="sm"
-                                            leftSection={<IconPlus size={14} />}
+                                            leftSection={<Image
+
+                                                h={25}
+                                                w="auto"
+                                                fit="contain"
+                                                src="https://res.cloudinary.com/dfjm3z7es/image/upload/v1752131915/icon_Task_x6h2zo.png"
+                                            />}
                                             onClick={handleAddTask}
                                             style={{
                                                 backgroundColor: '#0ea5e9',
@@ -168,6 +175,8 @@ export default function EngineerDetailsPage() {
                                         >
                                             Assign Task
                                         </Button>
+
+
                                         <ActionIcon variant="subtle" color="gray" size="sm">
                                             <IconDotsVertical size={16} />
                                         </ActionIcon>

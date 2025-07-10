@@ -34,7 +34,7 @@ import { AddEngineerModal } from '@/components/addEngineers';
 import { useDisclosure } from '@mantine/hooks';
 import { useRouter } from 'next/navigation';
 
-// Sample data matching your image
+
 const engineersData = [
   {
     id: 1,
