@@ -43,29 +43,29 @@ import React from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 
 interface NavItem {
-  icon: React.ComponentType<any>;
+  icon: string; // Changed to string for image URLs
   label: string;
   href: string;
 }
 
 const navItems: NavItem[] = [
-  { icon: IconDashboard, label: 'Dashboard', href: '/' },
-  { icon: IconChecklist, label: 'Tasks', href: '/tasks' },
-  { icon: IconBulb, label: 'Solutions', href: '/solutions' },
-  { icon: IconUsers, label: 'Engineers', href: '/engineers' },
-  { icon: IconSettings, label: 'Ops', href: '/ops' },
-  { icon: IconNotification, label: 'Notification', href: '/notifications' }
+  { icon: 'https://res.cloudinary.com/dfjm3z7es/image/upload/v1752134026/icon_Dashboard_rw2jrw.png', label: 'Dashboard', href: '/' },
+  { icon: 'https://res.cloudinary.com/dfjm3z7es/image/upload/v1752131915/icon_Task_x6h2zo.png', label: 'Tasks', href: '/tasks' },
+  { icon: 'https://res.cloudinary.com/dfjm3z7es/image/upload/v1752134025/icon_Solution_uatfns.png', label: 'Solutions', href: '/solutions' },
+  { icon: 'https://res.cloudinary.com/dfjm3z7es/image/upload/v1752134025/icon_engineer_o5ddsq.png', label: 'Engineers', href: '/engineers' },
+  { icon: 'https://res.cloudinary.com/dfjm3z7es/image/upload/v1752134025/icon_Customer-Support_qdomb0.png', label: 'Ops', href: '/ops' },
+  { icon: 'https://res.cloudinary.com/dfjm3z7es/image/upload/v1752134025/icon_notification_fa1mza.png', label: 'Notification', href: '/notifications' }
 ];
 
 interface NavbarItemProps {
-  icon: React.ComponentType<any>;
+  icon: string;
   label: string;
   href: string;
   active: boolean;
   onClick: () => void;
 }
 
-function NavbarItem({ icon: Icon, label, href, active, onClick }: NavbarItemProps) {
+function NavbarItem({ icon, label, href, active, onClick }: NavbarItemProps) {
   return (
     <UnstyledButton
       onClick={onClick}
@@ -82,7 +82,18 @@ function NavbarItem({ icon: Icon, label, href, active, onClick }: NavbarItemProp
       }}
     >
       <Group>
-        <Icon size={18} />
+        <Image
+          src={icon}
+          alt={label}
+          h={25}
+          w="auto"
+          fit="contain"
+          style={{
+
+            filter: active ? 'none' : 'grayscale(100%) brightness(0.6)',
+            transition: 'filter 0.2s ease'
+          }}
+        />
         <Text size="sm" fw={500}>
           {label}
         </Text>
@@ -112,7 +123,7 @@ export function Layout({ children }: LayoutProps) {
         breakpoint: 'sm',
         collapsed: { mobile: !opened },
       }}
-      
+
     >
       <AppShell.Navbar
         p="md"
@@ -130,7 +141,7 @@ export function Layout({ children }: LayoutProps) {
               fit="contain"
               src="https://res.cloudinary.com/dfjm3z7es/image/upload/v1752056574/logo_jzjgae.png"
             />
-          </Group> 
+          </Group>
 
           <Stack>
             {navItems.map((item) => (
@@ -148,7 +159,11 @@ export function Layout({ children }: LayoutProps) {
 
         <AppShell.Section style={{ padding: '16px', borderTop: '1px solid #21262d' }}>
           <Group>
-            <Avatar size={32} radius="xl" color="blue">
+            <Avatar
+              size={32}
+              radius="xl"
+              src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face"
+            >
               IM
             </Avatar>
             <Text size="sm" fw={500} style={{ color: 'white' }}>
