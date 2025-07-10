@@ -183,44 +183,50 @@ export default function EngineerDetailsPage() {
                                     </Group>
                                 </Flex>
 
-                                <Flex align="flex-start" gap="xl" mb="xl">
+                                <Flex align="flex-start"   gap="xl" mb="xl">
                                     <Avatar
-                                        size={80}
-                                        radius="xl"
+                                        size={200}
+                                        
                                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         style={{
+                                            borderRadius:200,
                                             border: '2px solid #334155'
                                         }}
                                     />
-                                    <Box style={{ flex: 1 }}>
-                                        <Flex justify="space-between" align="center" mb="md">
-                                            <Title order={4} c="#0ea5e9" fw={500}>About</Title>
-                                            <ActionIcon variant="subtle" color="gray" size="sm">
-                                                <IconEdit size={14} />
-                                            </ActionIcon>
-                                        </Flex>
-                                    </Box>
+
+                                    <Flex direction="column" style={{flex: 1}} gap="md">
+                                        <Box style={{ flex: 1 }}>
+                                            <Flex justify="space-between" align="center" mb="md">
+                                                <Title order={4} c="#0ea5e9" fw={500}>About</Title>
+                                                <ActionIcon variant="subtle" color="gray" size="sm">
+                                                    <IconEdit size={14} />
+                                                </ActionIcon>
+                                            </Flex>
+                                        </Box>
+                                        <Stack gap="md">
+                                            {[
+                                                ['Employee no:', engineerDetails.employeeNo],
+                                                ['First name:', engineerDetails.firstName],
+                                                ['Last name:', engineerDetails.lastName],
+                                                ['Role:', engineerDetails.role],
+                                                ['Started on:', engineerDetails.startedOn],
+                                                ['Email:', engineerDetails.email],
+                                                ['Phone:', engineerDetails.phone],
+                                                ['Status:', engineerDetails.status]
+                                            ].map(([label, value]) => (
+                                                <Flex justify="space-between" key={label}>
+                                                    <Text size="sm" c="white" fw={400}>{label}</Text>
+                                                    <Text size="sm" c={label === 'Status:' && value === 'active' ? '#10b981' : '#64748b'}>
+                                                        {value}
+                                                    </Text>
+                                                </Flex>
+                                            ))}
+                                        </Stack>
+                                    </Flex>
+
                                 </Flex>
 
-                                <Stack gap="md">
-                                    {[
-                                        ['Employee no:', engineerDetails.employeeNo],
-                                        ['First name:', engineerDetails.firstName],
-                                        ['Last name:', engineerDetails.lastName],
-                                        ['Role:', engineerDetails.role],
-                                        ['Started on:', engineerDetails.startedOn],
-                                        ['Email:', engineerDetails.email],
-                                        ['Phone:', engineerDetails.phone],
-                                        ['Status:', engineerDetails.status]
-                                    ].map(([label, value]) => (
-                                        <Flex justify="space-between" key={label}>
-                                            <Text size="sm" c="white" fw={400}>{label}</Text>
-                                            <Text size="sm" c={label === 'Status:' && value === 'active' ? '#10b981' : '#64748b'}>
-                                                {value}
-                                            </Text>
-                                        </Flex>
-                                    ))}
-                                </Stack>
+
                             </Paper>
                         </Box>
 
