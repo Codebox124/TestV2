@@ -147,14 +147,14 @@ export default function EngineerDetailsPage() {
 
                     <Flex gap="2rem" align="flex-start">
 
-                        <Box style={{ flexShrink: 0, flex: 1 }}>
+                        <Box style={{ flexShrink: 0,  flex: 1,  }}>
                             <Paper style={{
                                 backgroundColor: '#0f172a',
 
                                 borderRadius: '0.5rem',
                                 padding: '2rem'
                             }}>
-                                <Flex justify="space-between" mb="xl">
+                                <Flex  justify="space-between" mb="xl">
                                     <Title order={2} c="white" fw={600}>{engineerDetails.name}</Title>
                                     <Group gap="xs">
                                         <Button
@@ -183,7 +183,7 @@ export default function EngineerDetailsPage() {
                                     </Group>
                                 </Flex>
 
-                                <Flex align="flex-start"   gap="xl" mb="xl">
+                                <Flex align="flex-start"   gap="xl" mt="xl">
                                     <Avatar
                                         size={200}
                                         
