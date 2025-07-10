@@ -210,9 +210,7 @@ export default function EngineerDetailsPage() {
                                                 ['Last name:', engineerDetails.lastName],
                                                 ['Role:', engineerDetails.role],
                                                 ['Started on:', engineerDetails.startedOn],
-                                                ['Email:', engineerDetails.email],
-                                                ['Phone:', engineerDetails.phone],
-                                                ['Status:', engineerDetails.status]
+                                              
                                             ].map(([label, value]) => (
                                                 <Flex justify="space-between" key={label}>
                                                     <Text size="sm" c="white" fw={400}>{label}</Text>
