@@ -181,24 +181,7 @@ export default function EngineerDetailsPage() {
                                     </Group>
                                 </Flex>
 
-                                <Flex align="flex-start" gap="xl" mb="xl">
-                                    <Avatar
-                                        size={80}
-                                        radius="xl"
-                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                        style={{
-                                            border: '2px solid #334155'
-                                        }}
-                                    />
-                                    <Box style={{ flex: 1 }}>
-                                        <Flex justify="space-between" align="center" mb="md">
-                                            <Title order={4} c="#0ea5e9" fw={500}>About</Title>
-                                            <ActionIcon variant="subtle" color="gray" size="sm">
-                                                <IconEdit size={14} />
-                                            </ActionIcon>
-                                        </Flex>
-                                    </Box>
-                                </Flex>
+                               
 
                                 <Flex align="flex-start" gap="xl" mb="xl">
                                     <Avatar
