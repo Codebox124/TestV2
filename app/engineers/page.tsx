@@ -139,7 +139,7 @@ export default function EngineerPage() {
           <Menu.Dropdown>
             <Menu.Item
               leftSection={<IconEye style={{ width: rem(14), height: rem(14) }} />}
-               onClick={() => handleViewDetails(engineer.id)}
+              onClick={() => handleViewDetails(engineer.id)}
 
             >
               View Details
@@ -181,67 +181,68 @@ export default function EngineerPage() {
               <Title order={1} c="white" size="h2" fw={600}>
                 Engineers
               </Title>
-              <Button
-                leftSection={<IconPlus size={16} />}
-                onClick={handleAddEngineer}
-                style={{
-                  backgroundColor: '#0ea5e9',
-                  border: 'none'
-                }}
-              >
-                Add Engineer
-              </Button>
+
+              <Group>
+                <Flex gap="md" align="center">
+                  <Select
+
+                    data={['This month', 'Last month', 'This quarter', 'This year']}
+                    style={{ width: 150 }}
+                    styles={{
+                      input: {
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        color: 'white',
+                        '&::placeholder': {
+                          color: '#64748b'
+                        }
+                      },
+                      dropdown: {
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155'
+                      },
+                      option: {
+                        backgroundColor: '#1e293b',
+                        color: 'white',
+                        '&[data-selected]': {
+                          backgroundColor: '#0ea5e9'
+                        },
+                        '&:hover': {
+                          backgroundColor: '#334155'
+                        }
+                      }
+                    }}
+                  />
+                  <TextInput
+                    placeholder="Search"
+                    leftSection={<IconSearch size={16} />}
+                    style={{ flex: 1, maxWidth: 300 }}
+                    styles={{
+                      input: {
+                        backgroundColor: '#1e293b',
+                        border: '1px solid #334155',
+                        color: 'white',
+                        '&::placeholder': {
+                          color: '#64748b'
+                        }
+                      }
+                    }}
+                  />
+                </Flex>
+                <Button
+                  leftSection={<IconPlus size={16} />}
+                  onClick={handleAddEngineer}
+                  style={{
+                    backgroundColor: '#0ea5e9',
+                    border: 'none'
+                  }}
+                >
+                  Add Engineer
+                </Button>
+              </Group>
             </Flex>
 
-            {/* Filters */}
-            <Flex gap="md" align="center">
-              <Select
-
-                data={['This month', 'Last month', 'This quarter', 'This year']}
-                style={{ width: 150 }}
-                styles={{
-                  input: {
-                    backgroundColor: '#1e293b',
-                    border: '1px solid #334155',
-                    color: 'white',
-                    '&::placeholder': {
-                      color: '#64748b'
-                    }
-                  },
-                  dropdown: {
-                    backgroundColor: '#1e293b',
-                    border: '1px solid #334155'
-                  },
-                  option: {
-                    backgroundColor: '#1e293b',
-                    color: 'white',
-                    '&[data-selected]': {
-                      backgroundColor: '#0ea5e9'
-                    },
-                    '&:hover': {
-                      backgroundColor: '#334155'
-                    }
-                  }
-                }}
-              />
-              <TextInput
-                placeholder="Search"
-                leftSection={<IconSearch size={16} />}
-                style={{ flex: 1, maxWidth: 300 }}
-                styles={{
-                  input: {
-                    backgroundColor: '#1e293b',
-                    border: '1px solid #334155',
-                    color: 'white',
-                    '&::placeholder': {
-                      color: '#64748b'
-                    }
-                  }
-                }}
-              />
-            </Flex>
-
-            {/* Table */}
+          
             <Paper
               style={{
                 backgroundColor: '#1e293b',
