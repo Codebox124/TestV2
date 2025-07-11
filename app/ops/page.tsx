@@ -27,7 +27,8 @@ import {
   IconTrash,
   IconEye,
   IconPhone,
-  IconMail
+  IconMail,
+  IconDotsCircleHorizontal
 } from '@tabler/icons-react';
 import { Layout } from '@/components/Layout';
 
@@ -67,7 +68,7 @@ const engineersData = [
 ];
 
 export default function OpsPage() {
-  const router = useRouter(); // Use the hook to get router instance
+  const router = useRouter(); 
   const [opened, { open, close }] = useDisclosure(false);
   const [engineers, setEngineers] = useState(engineersData);
 
@@ -114,22 +115,22 @@ export default function OpsPage() {
       </Table.Td>
       <Table.Td>
         <Group gap="xs">
-          <IconMail size={16} color="#64748b" />
-          <Text size="sm" c="dimmed">
+          <IconMail size={16} color="white" />
+          <Text size="sm" c="white">
             {ops.email}
           </Text>
         </Group>
       </Table.Td>
       <Table.Td>
         <Group gap="xs">
-          <IconPhone size={16} color="#64748b" />
-          <Text size="sm" c="dimmed">
+          <IconPhone size={16} color="white" />
+          <Text size="sm" c="white">
             {ops.phone}
           </Text>
         </Group>
       </Table.Td>
       <Table.Td>
-        <Text size="sm" c="dimmed">
+        <Text size="sm" c="white">
           {ops.tasks} tasks done
         </Text>
       </Table.Td>
@@ -137,7 +138,7 @@ export default function OpsPage() {
         <Menu shadow="md" width={200} position="bottom-end">
           <Menu.Target>
             <ActionIcon variant="subtle" color="gray">
-              <IconDotsVertical size={16} />
+              <IconDotsCircleHorizontal size={16} />
             </ActionIcon>
           </Menu.Target>
           <Menu.Dropdown>
@@ -251,7 +252,8 @@ export default function OpsPage() {
               style={{
                 backgroundColor: '#1e293b',
                 border: '1px solid #334155',
-                borderRadius: '0.5rem'
+                borderRadius: '0.5rem',
+                marginTop:32
               }}
             >
               <Table

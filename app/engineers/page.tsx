@@ -179,7 +179,7 @@ export default function EngineerPage() {
           <Stack gap="xl">
             {/* Header */}
             <Flex justify="space-between" align="center">
-              <Title order={1} c="white" size="h2" fw={600}>
+              <Title order={1} c="white" size="h1" fw={600}>
                 Engineers
               </Title>
 
@@ -191,8 +191,8 @@ export default function EngineerPage() {
                     style={{ width: 150 }}
                     styles={{
                       input: {
-                        backgroundColor: '#1e293b',
-                        border: '1px solid #334155',
+                        backgroundColor: 'transparent',
+                        border: '0',
                         color: 'white',
                         '&::placeholder': {
                           color: '#64748b'
@@ -245,10 +245,11 @@ export default function EngineerPage() {
 
           
             <Paper
-              style={{
+             style={{
                 backgroundColor: '#1e293b',
                 border: '1px solid #334155',
-                borderRadius: '0.5rem'
+                borderRadius: '0.5rem',
+                marginTop:32
               }}
             >
               <Table

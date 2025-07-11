@@ -72,7 +72,7 @@ function NavbarItem({ icon, label, href, active, onClick }: NavbarItemProps) {
       style={{
         display: 'block',
         width: '100%',
-        fontWeight:600,
+        fontWeight: 600,
         padding: rem(10),
         borderRadius: rem(4),
         color: active ? '#339af0' : '#ffff',
@@ -86,7 +86,7 @@ function NavbarItem({ icon, label, href, active, onClick }: NavbarItemProps) {
         <Image
           src={icon}
           alt={label}
-          h={25}
+          h={35}
           w="auto"
           fit="contain"
           style={{

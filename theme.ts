@@ -1,7 +1,9 @@
-'use client';
-
 import { createTheme } from '@mantine/core';
 
 export const theme = createTheme({
-  /* Put your mantine theme override here */
+  fontFamily: 'Core Sans C, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
+  fontFamilyMonospace: 'Monaco, Courier, monospace',
+  headings: {
+    fontFamily: 'Core Sans C, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif',
+  },
 });
