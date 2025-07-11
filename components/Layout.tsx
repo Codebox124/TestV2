@@ -72,9 +72,10 @@ function NavbarItem({ icon, label, href, active, onClick }: NavbarItemProps) {
       style={{
         display: 'block',
         width: '100%',
+        fontWeight:600,
         padding: rem(10),
         borderRadius: rem(4),
-        color: active ? '#339af0' : '#8b949e',
+        color: active ? '#339af0' : '#ffff',
         backgroundColor: active ? 'rgba(51, 154, 240, 0.1)' : 'transparent',
         '&:hover': {
           backgroundColor: 'rgba(51, 154, 240, 0.05)'
@@ -90,7 +91,7 @@ function NavbarItem({ icon, label, href, active, onClick }: NavbarItemProps) {
           fit="contain"
           style={{
 
-            filter: active ? 'none' : 'grayscale(100%) brightness(0.6)',
+            filter: active ? 'none' : 'white',
             transition: 'filter 0.2s ease'
           }}
         />

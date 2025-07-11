@@ -27,7 +27,8 @@ import {
   IconTrash,
   IconEye,
   IconPhone,
-  IconMail
+  IconMail,
+  IconDotsCircleHorizontal
 } from '@tabler/icons-react';
 import { Layout } from '@/components/Layout';
 import { AddEngineerModal } from '@/components/addEngineers';
@@ -110,22 +111,22 @@ export default function EngineerPage() {
       </Table.Td>
       <Table.Td>
         <Group gap="xs">
-          <IconMail size={16} color="#64748b" />
-          <Text size="sm" c="dimmed">
+          <IconMail size={16} color="white" />
+          <Text size="sm"  c="white">
             {engineer.email}
           </Text>
         </Group>
       </Table.Td>
       <Table.Td>
         <Group gap="xs">
-          <IconPhone size={16} color="#64748b" />
-          <Text size="sm" c="dimmed">
+          <IconPhone size={16} color="white" />
+          <Text size="sm"  c="white">
             {engineer.phone}
           </Text>
         </Group>
       </Table.Td>
       <Table.Td>
-        <Text size="sm" c="dimmed">
+        <Text size="sm" c="white">
           {engineer.tasks} tasks done
         </Text>
       </Table.Td>
@@ -133,7 +134,7 @@ export default function EngineerPage() {
         <Menu shadow="md" width={200} position="bottom-end">
           <Menu.Target>
             <ActionIcon variant="subtle" color="gray">
-              <IconDotsVertical size={16} />
+              <IconDotsCircleHorizontal size={16} />
             </ActionIcon>
           </Menu.Target>
           <Menu.Dropdown>
