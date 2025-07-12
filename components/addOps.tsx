@@ -47,8 +47,15 @@ export const AddOpsModal: React.FC<AddOpsModalProps> = ({ opened, onClose, onSub
                     border: '1px solid #334155',
                     borderRadius: '8px',
                 },
-                title: { color: 'white', fontWeight: 600 },
-                header: { borderBottom: 'none',backgroundColor: '#0f172a', },
+                title: {
+                    color: '#fff',
+                    fontSize: '18px',
+                    fontWeight: 500,
+                },
+                header: {
+                    backgroundColor: '#0f172a',
+                    borderBottom: '1px solid #373A40',
+                },
                 body: { color: 'white' },
                 close: {
                     color: 'white',
@@ -56,7 +63,7 @@ export const AddOpsModal: React.FC<AddOpsModalProps> = ({ opened, onClose, onSub
                 },
             }}
         >
-            <Stack gap="sm">
+            <Stack style={{marginTop: 20}} gap="sm">
                 <TextInput
                     label="First Name"
                     value={firstName}
@@ -122,6 +129,8 @@ export const AddOpsModal: React.FC<AddOpsModalProps> = ({ opened, onClose, onSub
                             borderColor: '#334155',
                             color: 'white',
                             backgroundColor: '#0f172a',
+                            width: 160,
+                            height: 56
                         }}
                     >
                         Cancel
@@ -131,6 +140,8 @@ export const AddOpsModal: React.FC<AddOpsModalProps> = ({ opened, onClose, onSub
                         style={{
                             backgroundColor: '#0ea5e9',
                             color: 'white',
+                            width: 160,
+                            height: 56
                         }}
                     >
                         Add

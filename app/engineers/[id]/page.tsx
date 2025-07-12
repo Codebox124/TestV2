@@ -80,17 +80,18 @@ export default function EngineerDetailsPage() {
                 border: '1px solid #1e293b',
                 borderRadius: '0.5rem',
                 padding: '1rem',
-                marginBottom: '0.5rem'
+
+                marginBottom: '2rem'
             }}
         >
             <Flex justify="space-between" align="center">
                 <Box style={{ flex: 1 }}>
-                    <Text size="md" fw={600} c="#0E3465" mb="md">
+                    <Text size="xl" fw={600} c="#0E3465" mb="md">
                         {task.serviceName}
                     </Text>
                     <Group gap="xs" align="center" mb={showProgress ? "sm" : "0"}>
                         <Avatar
-                            size={20}
+                            size={30}
                             radius="xl"
                             style={{
                                 backgroundColor: '#64748b',
@@ -106,7 +107,7 @@ export default function EngineerDetailsPage() {
                         <Text size="xs" c="#64748b">{task.companyName}</Text>
                     </Group>
                     {showProgress && (
-                        <Box mt="sm">
+                        <Box mt="xl">
                             <Box style={{
                                 width: '100%',
                                 height: '6px',
@@ -147,14 +148,14 @@ export default function EngineerDetailsPage() {
 
                     <Flex gap="2rem" align="flex-start">
 
-                        <Box style={{ flexShrink: 0,  flex: 1,  }}>
+                        <Box style={{ flexShrink: 0, flex: 1, }}>
                             <Paper style={{
                                 backgroundColor: '#0f172a',
 
                                 borderRadius: '0.5rem',
                                 padding: '2rem'
                             }}>
-                                <Flex  justify="space-between" mb="xl">
+                                <Flex justify="space-between" mb="xl">
                                     <Title order={2} c="white" fw={600}>{engineerDetails.name}</Title>
                                     <Group gap="xs">
                                         <Button
@@ -183,18 +184,18 @@ export default function EngineerDetailsPage() {
                                     </Group>
                                 </Flex>
 
-                                <Flex align="flex-start"   gap="xl" mt="xl">
+                                <Flex align="flex-start" gap="xl" mt="xl">
                                     <Avatar
                                         size={200}
-                                        
+
                                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         style={{
-                                            borderRadius:200,
+                                            borderRadius: 200,
                                             border: '2px solid #334155'
                                         }}
                                     />
 
-                                    <Flex direction="column" style={{flex: 1}} gap="md">
+                                    <Flex direction="column" style={{ flex: 1 }} gap="md">
                                         <Box style={{ flex: 1 }}>
                                             <Flex justify="space-between" align="center" mb="md">
                                                 <Title order={4} c="#0ea5e9" fw={500}>About</Title>
@@ -210,7 +211,7 @@ export default function EngineerDetailsPage() {
                                                 ['Last name:', engineerDetails.lastName],
                                                 ['Role:', engineerDetails.role],
                                                 ['Started on:', engineerDetails.startedOn],
-                                              
+
                                             ].map(([label, value]) => (
                                                 <Flex justify="space-between" key={label}>
                                                     <Text size="sm" c="white" fw={400}>{label}</Text>
@@ -251,7 +252,7 @@ export default function EngineerDetailsPage() {
 
                             {/* Previous */}
                             <Box>
-                                <Flex justify="space-between" align="center" mb="md">
+                                <Flex justify="space-between" align="center" mb="xl">
                                     <Title order={3} c="#0ea5e9" fw={600}>
                                         {previous.length} Previous tasks
                                     </Title>

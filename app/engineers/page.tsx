@@ -112,7 +112,7 @@ export default function EngineerPage() {
       <Table.Td>
         <Group gap="xs">
           <IconMail size={16} color="white" />
-          <Text size="sm"  c="white">
+          <Text size="sm" c="white">
             {engineer.email}
           </Text>
         </Group>
@@ -120,7 +120,7 @@ export default function EngineerPage() {
       <Table.Td>
         <Group gap="xs">
           <IconPhone size={16} color="white" />
-          <Text size="sm"  c="white">
+          <Text size="sm" c="white">
             {engineer.phone}
           </Text>
         </Group>
@@ -243,13 +243,13 @@ export default function EngineerPage() {
               </Group>
             </Flex>
 
-          
+
             <Paper
-             style={{
+              style={{
                 backgroundColor: '#1e293b',
                 border: '1px solid #334155',
                 borderRadius: '0.5rem',
-                marginTop:32
+                marginTop: 32
               }}
             >
               <Table

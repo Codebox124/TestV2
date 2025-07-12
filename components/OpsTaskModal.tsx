@@ -58,7 +58,7 @@ export const AddOpsTaskModal: React.FC<AddOpsTaskModalProps> = ({ opened, onClos
                     borderBottom: '1px solid #373A40',
                 },
                 body: {
-                   backgroundColor: '#0f172a',
+                    backgroundColor: '#0f172a',
                     padding: '24px',
                 },
                 content: {
@@ -74,7 +74,7 @@ export const AddOpsTaskModal: React.FC<AddOpsTaskModalProps> = ({ opened, onClos
                     styles={{
                         label: { color: '#C1C2C5', marginBottom: '8px' },
                         input: {
-                           backgroundColor: '#0f172a',
+                            backgroundColor: '#0f172a',
                             border: '1px solid #373A40',
                             color: '#fff',
                             '&:focus': {
@@ -108,7 +108,7 @@ export const AddOpsTaskModal: React.FC<AddOpsTaskModalProps> = ({ opened, onClos
                     styles={{
                         label: { color: '#C1C2C5', marginBottom: '8px' },
                         input: {
-                           backgroundColor: '#0f172a',
+                            backgroundColor: '#0f172a',
                             border: '1px solid #373A40',
                             color: '#fff',
                             '&:focus': {
@@ -149,7 +149,7 @@ export const AddOpsTaskModal: React.FC<AddOpsTaskModalProps> = ({ opened, onClos
                     styles={{
                         label: { color: '#C1C2C5', marginBottom: '8px' },
                         input: {
-                           backgroundColor: '#0f172a',
+                            backgroundColor: '#0f172a',
                             border: '1px solid #373A40',
                             color: '#fff',
                             '&:focus': {
@@ -171,7 +171,7 @@ export const AddOpsTaskModal: React.FC<AddOpsTaskModalProps> = ({ opened, onClos
                     styles={{
                         label: { color: '#C1C2C5', marginBottom: '8px' },
                         input: {
-                           backgroundColor: '#0f172a',
+                            backgroundColor: '#0f172a',
                             border: '1px solid #373A40',
                             color: '#fff',
                             '&:focus': {
@@ -194,7 +194,7 @@ export const AddOpsTaskModal: React.FC<AddOpsTaskModalProps> = ({ opened, onClos
                     styles={{
                         label: { color: '#C1C2C5', marginBottom: '8px' },
                         input: {
-                           backgroundColor: '#0f172a',
+                            backgroundColor: '#0f172a',
                             border: '1px solid #373A40',
                             color: '#fff',
                             '&:focus': {
@@ -216,7 +216,7 @@ export const AddOpsTaskModal: React.FC<AddOpsTaskModalProps> = ({ opened, onClos
                     styles={{
                         label: { color: '#C1C2C5', marginBottom: '8px' },
                         input: {
-                           backgroundColor: '#0f172a',
+                            backgroundColor: '#0f172a',
                             border: '1px solid #373A40',
                             color: '#fff',
                             '&:focus': {
@@ -226,36 +226,33 @@ export const AddOpsTaskModal: React.FC<AddOpsTaskModalProps> = ({ opened, onClos
                     }}
                 />
 
-                <Group justify="space-between" mt="lg">
+                <Flex justify="flex-end" gap="md" mt="md">
                     <Button
                         variant="outline"
-
-                        styles={{
-                            root: {
-                                border: '1px solid #373A40',
-                                color: '#C1C2C5',
-                                '&:hover': {
-                                    backgroundColor: '#373A40',
-                                }
-                            }
+                        color="gray"
+                        onClick={onClose}
+                        style={{
+                            borderColor: '#334155',
+                            color: 'white',
+                            backgroundColor: '#0f172a',
+                            width: 160,
+                            height: 56
                         }}
                     >
                         Cancel
                     </Button>
                     <Button
                         onClick={handleSubmit}
-                        styles={{
-                            root: {
-                                backgroundColor: '#00bcd4',
-                                '&:hover': {
-                                    backgroundColor: '#00acc1',
-                                }
-                            }
+                        style={{
+                            backgroundColor: '#0ea5e9',
+                            color: 'white',
+                            width: 160,
+                            height: 56
                         }}
                     >
                         Add
                     </Button>
-                </Group>
+                </Flex>
             </Stack>
         </Modal>
     );

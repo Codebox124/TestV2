@@ -180,7 +180,7 @@ export default function OpsPage() {
           <Stack gap="xl">
             {/* Header */}
             <Flex justify="space-between" align="center">
-              <Title order={1} c="white" size="h2" fw={600}>
+              <Title order={1} c="white" size="h1" fw={600}>
                 Ops
               </Title>
 
